@@ -1,0 +1,12 @@
+type Holder @entity {
+  id: ID!
+  address: Bytes!
+  balance: BigInt!
+  token: Token!
+}
+
+type Token @entity {
+  id: ID!
+  address: Bytes!
+  totalSupply: BigInt!
+}
