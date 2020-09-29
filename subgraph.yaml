@@ -23,3 +23,24 @@ dataSources:
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/mapping.ts
+  - kind: ethereum/contract
+    name: Balancer
+    network: mainnet
+    source:
+      address: "0xba100000625a3754423978a60c9317c58a424e3D"
+      abi: ERC20
+      startBlock: 10299683
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      entities:
+        - Token
+        - Holder
+      abis:
+        - name: ERC20
+          file: ./abis/ERC20.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts
